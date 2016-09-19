@@ -33,8 +33,8 @@ storage.set('user', { name: 'Elliot', age: 28 })
 
 ```javascript
 storage.get('username') // 'Elliot'
-storage.get('counter', 0) // 0 (if counter doesn't exist)
-typeof storage.get('user') // 'object'
+storage.get('user') // Object{ name: 'Elliot', age: 28 }
+storage.get('counter', 0) // 0 (+implicit storage.set('counter', 0))
 ```
 
 . __update__ ( `key`, `modifier` )
@@ -71,7 +71,7 @@ storage.watch('counter', ({ prev, next }) => {
 
 ```javascript
 storage.unwatch('counter', counterChangeHandler)
-```    
+```
 
 . __all__ ( )
 
@@ -83,3 +83,7 @@ storage.all().forEach(({ key, value }) => {
 ```  
 
 . __removeAll__ ( )
+
+```javascript
+storage.removeAll() // removes all elements persisted by lstorage
+```
