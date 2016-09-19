@@ -19,6 +19,9 @@ export default {
 
   get(key, defaultValue=null) {
     const entry = localStorage.getItem(getKey(key))
+    if (entry === null && defaultValue !== null) {
+      this.set(key, defaultValue)
+    }
     return entry ? JSON.parse(entry) : defaultValue
   },
 

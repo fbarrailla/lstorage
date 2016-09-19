@@ -34,6 +34,12 @@ test('get', t => {
   t.deepEqual(lstorage.get('letters'), ['c','d'])
 })
 
+test('get with default value', t => {
+  t.is(localStorage.getItem('lstrg(abc)'), null)
+  t.is(lstorage.get('abc', 'xyz'), 'xyz')
+  t.is(localStorage.getItem('lstrg(abc)'), '"xyz"')
+})
+
 test('update', t => {
   localStorage.setItem('lstrg(counter)', '3')
   localStorage.setItem('lstrg(list)', '["a"]')
