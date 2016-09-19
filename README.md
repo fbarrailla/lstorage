@@ -87,3 +87,7 @@ storage.all().forEach(({ key, value }) => {
 ```javascript
 storage.removeAll() // removes all elements persisted by lstorage
 ```
+
+## Enjoy !
+
+![.watch](watch.gif)
