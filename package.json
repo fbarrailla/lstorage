@@ -1,0 +1,35 @@
+{
+  "name": "lstorage",
+  "version": "1.0.0",
+  "description": "Browser localStorage helper, no more.",
+  "main": "lib/lstorage.js",
+  "files": [
+    "lib",
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "test": "ava",
+    "prepublish": "npm run test && npm run build",
+    "build": "npm run build:es && npm run build:umd && npm run build:umd:min",
+    "build:umd": "./node_modules/.bin/babel --presets es2015 --plugins transform-es2015-modules-umd  src --out-dir dist",
+    "build:umd:min": "./node_modules/.bin/babel --presets es2015,babili --plugins transform-es2015-modules-umd  src --out-file dist/lstorage.min.js",
+    "build:es": "./node_modules/.bin/babel --presets es2015  src --out-dir lib"
+  },
+  "keywords": [
+    "localstorage",
+    "local",
+    "storage"
+  ],
+  "author": "fbarrailla",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-cli": "^6.14.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.12.0",
+    "babel-preset-babili": "0.0.2",
+    "babel-preset-es2015": "^6.14.0",
+    "localStorage": "^1.0.3",
+    "node-localstorage": "^1.3.0"
+  }
+}
