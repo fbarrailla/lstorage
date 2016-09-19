@@ -22,62 +22,64 @@ import storage from 'lstorage'
 
 ## API Reference
 
-- . __set__ ( `key`, `value` )
+. __set__ ( `key`, `value` )
 
-  ```javascript
-  storage.set('username', 'Elliot')
-  storage.set('user', { name: 'Elliot', age: 28 })
-  ```
+```javascript
+storage.set('username', 'Elliot')
+storage.set('user', { name: 'Elliot', age: 28 })
+```
 
-- . __get__ ( `key`, [`defaultValue`] )
+. __get__ ( `key`, [`defaultValue`] )
 
-  ```javascript
-  storage.get('username') // 'Elliot'
-  storage.get('counter', 0) // 0 (if counter doesn't exist)
-  typeof storage.get('user') // 'object'
-  ```
+```javascript
+storage.get('username') // 'Elliot'
+storage.get('counter', 0) // 0 (if counter doesn't exist)
+typeof storage.get('user') // 'object'
+```
 
-- . __update__ ( `key`, `modifier` )
+. __update__ ( `key`, `modifier` )
 
-  ```javascript
-  storage.update('counter', c => c+1)
-  // ...  
-  storage.update('letters', letters => letters.filter(l => l !== 'b'))
-  // ...
-  storage.update('user', user => {
-    user.lastname = 'Alderson'
-    return user
-  })
-  ```
+```javascript
+storage.update('counter', c => c+1)
+// ...  
+storage.update('letters', letters => letters.filter(l => l !== 'b'))
+// ...
+storage.update('user', user => {
+  user.lastname = 'Alderson'
+  return user
+})
+```
 
-- . __remove__ ( `key` )
+. __remove__ ( `key` )
 
-  ```javascript
-  storage.remove('username')
-  // storage.get('username') eq. null
-  ```
+```javascript
+storage.remove('username')
+// storage.get('username') eq. null
+```
 
-- . __watch__ ( `key`, `handler` )
+. __watch__ ( `key`, `handler` )
 
-  ```javascript
-  storage.watch('counter', ({ prev, next }) => {
-    console.info('counter modified from another tab')
-    console.info('previous value', prev) // 2
-    console.info('next value', next) // 3
-  })
-  ```
+```javascript
+storage.watch('counter', ({ prev, next }) => {
+  console.info('counter modified from another tab')
+  console.info('previous value', prev) // 2
+  console.info('next value', next) // 3
+})
+```
 
-- . __unwatch__ ( `key`, `handler` )
+. __unwatch__ ( `key`, `handler` )
 
-  ```javascript
-  storage.unwatch('counter', counterChangeHandler)
-  ```    
+```javascript
+storage.unwatch('counter', counterChangeHandler)
+```    
 
-- . __all__ ( )   
+. __all__ ( )
 
-  ```javascript
-  // returns an array containing all key/values persisted by lstorage
-  storage.all().forEach(({ key, value }) => {
-    console.info(`storage[ ${key} ]`, value)
-  })
-  ```  
+```javascript
+// returns an array containing all key/values persisted by lstorage
+storage.all().forEach(({ key, value }) => {
+  console.info(`storage[ ${key} ]`, value)
+})
+```  
+
+. __removeAll__ ( )
