@@ -6,7 +6,7 @@ A simple browser `localStorage` helper, no more.
 - :white_check_mark: Update stored value
 - :white_check_mark: Watch changes from other tabs
 - :white_check_mark: IE8+ compatibility
-– :white_check_mark: Small (<2Ko minified)
+- :white_check_mark: Small (<2Ko minified)
 - :x: No polyfills
 - :x: No sessionstorage, IndexedDB, WebSQL...
 
