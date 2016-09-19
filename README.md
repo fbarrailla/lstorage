@@ -1,6 +1,6 @@
 # :floppy_disk: LStorage.
 
-Web browser `localStorage` helper, no more.
+A simple browser `localStorage` helper, no more.
 
 - :white_check_mark: Store/retrieve string, number, array, object or boolean (json stringified/parsed)
 - :white_check_mark: Update stored value

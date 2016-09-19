@@ -1,7 +1,7 @@
 {
   "name": "lstorage",
   "version": "1.0.0",
-  "description": "Browser localStorage helper, no more.",
+  "description": "A browser localStorage helper, no more.",
   "main": "lib/lstorage.js",
   "files": [
     "lib",
